@@ -1,0 +1,126 @@
+@import 'bootstrap/css/bootstrap.min';
+@import '_grid';
+@import 'mediahelp';
+@import 'sprite';
+@import '../vendor/owlcarousel/owl.carousel.scss';
+@import '../vendor/owlcarousel/owl.theme.default.scss';
+@import '../vendor/fancybox/jquery.fancybox.min';
+
+$anim: all 0.2s ease 0s;
+$anim5: all 0.5s;
+$animCubic: all 0.5s cubic-bezier(0.3, 0, 0.2, 1);
+$animCubic02: all 0.2s cubic-bezier(0.3, 0, 0.2, 1);
+$red: #E41E38;
+$blue: #0091ff;
+
+@import 'popups';
+
+body {
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    line-height: 1.4161;
+    color: #000;
+}
+
+
+@media (max-width: 550px) {
+    .phablet-container{
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.phablet-container{
+    &__inside{
+        padding: 0 15px;
+
+        @media ($bp-larger-than-phablet) {
+            padding: 0;
+        }
+    }
+}
+
+.btn {
+    display: flex;
+    height: 51px;
+    width: 190px;
+    background: #CC9A81;
+    box-shadow: 0px 15px 25px rgba(123, 121, 121, 0.25);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 118%;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        text-decoration: none;
+        color: #000;
+    }
+}
+
+.section-header {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16px;
+    color: #414141;
+    margin-bottom: 60px;
+}
+
+.installations {
+    padding: 50px 0;
+
+    &__grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    &__item {
+        box-shadow: 20px 30px 60px rgba(0, 0, 0, 0.08);
+        background-color: #fff;
+        padding: 8px 24px 8px 8px;
+        height: 300px;
+    }
+
+    &__card {
+        display: flex;
+
+    }
+
+    &__image {
+        background: #F1F1F1;
+        margin-right: 16px;
+        img {
+            width: 226px;
+            height: 284px;
+        }
+    }
+
+    &__right {
+        padding-bottom: 16px;
+
+    }
+
+    &__description {
+
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 114%;
+        color: #414141;
+        margin-bottom: 16px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        color: #838383;
+    }
+}
