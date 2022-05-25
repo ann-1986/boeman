@@ -62,6 +62,17 @@ body {
     }
 }
 
+p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #838383;
+}
+
+.bold {
+    font-weight: 700;
+}
+
 .section-header {
     font-weight: 700;
     font-size: 36px;
@@ -92,11 +103,12 @@ body {
     }
 
     &__image {
-        background: #F1F1F1;
+        //background-color: #F1F1F1;
         margin-right: 16px;
+
         img {
             width: 226px;
-            height: 284px;
+            overflow: hidden;
         }
     }
 
@@ -122,5 +134,230 @@ body {
         font-size: 14px;
         line-height: 114%;
         color: #838383;
+    }
+}
+
+.technics {
+    padding: 88px 0;
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    &__item {
+        width: 31%;
+        background: #FFF;
+        box-shadow: 20px 30px 60px rgba(0, 0, 0, 0.08);
+        
+        @media ($bp-larger-than-note) {
+            width: 25%;
+        } 
+
+    }
+
+    &__card {
+        padding: 24px;
+        position: relative;
+        height: 632px;
+    }
+
+    &__image {
+        margin-bottom: 56px;
+        img {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 113%;
+        color: #414141;
+        margin-bottom: 16px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 113%;
+        color: #838383;
+    }
+
+    &__btn {
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+    }
+}
+
+.application {
+    background-color: #f7f7f7;
+    padding: 100px 0;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    &__left {
+        width: 345px;
+        margin-right: 100px;
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 116%;      
+        color: #414141;
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #838383;
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+    }
+
+    &__item {
+        width: 23%;
+    }
+
+    &__icon {
+        margin-bottom: 20px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 116%;
+        color: #414141;
+        margin-bottom: 20px;
+    }
+
+    &__info {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        color: #838383;
+        margin-bottom: 22px;
+    }
+
+    &__more {
+        position: relative;
+        a {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 114%;
+            color: #414141;
+            padding-right: 20px;
+
+            &:hover {
+                //text-decoration: none;
+            }
+            &:before {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+                padding-bottom: 2px;
+                content: '\203A';
+                font-size: 20px;
+                color: #fff;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #CC9A81;
+                right: 10px;
+                top: 5px;
+            }
+        }
+    }
+}
+
+.about {
+    padding: 100px 0;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__image {
+        margin-right: 153px;
+        width: 39%;
+        margin-bottom: 60px;
+        img {
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+
+    &__info {
+        width: 50%;
+    }
+
+    &__caption {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 116%;
+        color: #414141;
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+    }
+}
+
+.service {
+    padding: 100px 0;
+
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #838383;
+        margin-bottom: 60px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    &__item {
+        width: 30%;
+    }
+
+    &__card {
+        background-repeat: no-repeat;
+        background: rgba(0, 0, 0, 0.5);
+        width: 518px;
+        height: 750px;
+        
+        &--1 {
+            background-image: url(/src/img/service-1.jpg);
+        }
+
+        &--2 {
+            background-image: url(/src/img/service-2.jpg);
+        }
+
+        &--3 {
+            background-image: url(/src/img/service-3.jpg);
+        }
     }
 }
