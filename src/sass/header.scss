@@ -1,25 +1,89 @@
+body {
+    &.open-menu {
+        .header {
+            border-bottom: 1px solid #EBEBEB;
+        }
+    }
+}
+
 .header {
+    position: relative;
+    z-index: 110;
+
     &__body {
         display: flex;
         align-items: center;
-        padding: 28px 0;
+        padding: 20px 0 24px;
+
+        @media ($bp-larger-than-desktopfullhd) {
+            padding: 28px 0 32px;     
+        }
+    }
+    &__logo {
+        img {
+            width: 150px;
+            margin-bottom: 4px;
+
+            @media ($bp-larger-than-desktopfullhd) {
+                width: auto;
+            }
+        }
     }
     &__menu {
         width: 100%;
-        padding: 0 60px 0 130px;
+        padding: 0 30px 0 30px;
+        
+
+        @media ($bp-larger-than-desktopfullhd) {
+            padding: 0 60px 0 130px;
+        }
 
         ul {
             list-style-type: none;
             padding-left: 0;
             display: flex;
             justify-content: space-around;
+            margin: 0;
 
             a {
-                font-size: 16px;
+                font-size: 12px;
                 color: #414141;
+
+                @media ($bp-larger-than-desktopfullhd) {
+                    font-size: 16px;
+                }
 
                 &:hover {
                     color: #414141;  
+                }
+            }
+
+            li {
+                &.has-child {
+                    > a {
+                        padding-right: 16px;
+                        position: relative;
+
+                        @media ($bp-larger-than-desktopfullhd) {
+                            padding-right: 24px;
+                        }
+
+                        &:after {
+                            display: inline-block;
+                            content: "";
+                            width: 16px;
+                            height: 8px;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: scale(0.75) translateY(-50%);
+                            background: transparent url('/img/svg/top-menu-arrow.svg') center center no-repeat;
+
+                            @media ($bp-larger-than-desktopfullhd) {
+                                transform: scale(1) translateY(-50%);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -47,11 +111,15 @@
 .header-phone {
     white-space: nowrap;
     color: #414141;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     transition: $anim;
     padding-left: 23px;
     position: relative;
+
+    @media ($bp-larger-than-desktopfullhd) {
+        font-size: 20px;
+    }
 
     &:before {
         display: inline-block;
@@ -71,6 +139,44 @@
     }
 }
 
+.submenus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 100;
+    box-shadow: 0px 15px 25px rgba(123, 121, 121, 0.25);
+    padding-top: 76px;
+
+    .submenu {
+        padding: 30px 0;
+        width: 870px;
+        margin-left: auto;
+        margin-right: auto;
+
+        p {
+            font-weight: 700;
+        }
+
+        a {
+            font-size: 12px;
+            color: #414141;
+
+            @media ($bp-larger-than-desktopfullhd) {
+                font-size: 16px;
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+    }
+}
+
+
 .lead-slider {
     &__item {
         display: flex;
@@ -84,17 +190,25 @@
     }
 
     &__header {
-        font-size: 48px;
+        font-size: 38px;
         font-weight: 700;
         line-height: 1.17;
         color: #414141;
         margin-bottom: 24px;
+
+        @media ($bp-larger-than-desktopfullhd) {
+            font-size: 48px;
+        }
     }
 
     &__text {
-        font-size: 20px;
+        font-size: 18px;
         color: #838383;
         margin-bottom: 24px;
+
+        @media ($bp-larger-than-desktopfullhd) {
+            font-size: 20px;
+        }
     }
 
     &__image {
@@ -134,6 +248,7 @@
             border: 0 none;
             flex-shrink: 0;
             font-size: 0;
+            padding: 0;
 
             span {
                 display: none;
@@ -175,7 +290,7 @@
                 width: 9px;
                 height: 23px;
                 display: block;
-                margin-right: 4px;
+                margin-right: 3px;
             }
         }
 
@@ -200,7 +315,7 @@
                 width: 9px;
                 height: 23px;
                 display: block;
-                margin-right: 4px;
+                margin-left: 3px;
             }
         }
     }
