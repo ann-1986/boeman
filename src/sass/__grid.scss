@@ -14,10 +14,10 @@ $bp-larger-than-1250 : "min-width: 1250px" !default;
 $bp-larger-than-1400 : "min-width: 1400px" !default;
 
 //Grid Variables
-$container-width: 1470px !default;
+$container-width: 1654px !default;
 $container-width-larger-than-mobile: 100% !default;
 $container-width-larger-than-phablet: 80% !default;
-$container-width-larger-than-desktop: 80% !default;
+$container-width-larger-than-desktop: 100% !default;
 $container-width-larger-than-1400: 100% !default;
 
 .b-container {
@@ -27,6 +27,7 @@ $container-width-larger-than-1400: 100% !default;
   margin: 0 auto;
   padding: 0 15px;
   box-sizing: border-box;
+  // border: 1px red solid;
 
   @media ($bp-larger-than-phablet) {
     padding: 0 20px;
