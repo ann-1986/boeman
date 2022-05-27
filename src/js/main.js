@@ -62,21 +62,8 @@ $(function() {
     // слайдер на главной
     initLeadSlider();
 
-    initXtab();
-    toogler({
-        "parent": ".price__item",
-        "hiddenContainer": ".price__list",
-        "link": ".price__title",
-        "speed": 100,
-        "openClass": "active"
-    });
-    toogler({
-        "parent": ".faq__item",
-        "hiddenContainer": ".faq__answer",
-        "link": ".faq__title",
-        "speed": 100,
-        "openClass": "active"
-    });
+    // initXtab();
+
     /*
     toogler({
         "parent": ".footer-block",
@@ -193,6 +180,8 @@ var initLeadSlider = function() {
         loop: true,
         margin: 0,
         responsiveClass: true,
+        navContainer: '.lead-slider-nav',
+        dotsContainer: '.lead-slider-dots',
         responsive:{
             0:{
                 items: 1,
