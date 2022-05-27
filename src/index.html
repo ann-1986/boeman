@@ -1,4 +1,4 @@
-<include src="part/header.inc.html" title="Главная страница"></include>
+<include src="part/header.inc.html" title="Главная страница" class="open-menu"></include>
 <header class="header">
     <div class="b-container">
         <div class="header__body">
@@ -8,8 +8,10 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">Продукция</a></li>
-                    <li><a href="#">Применение</a></li>
+                    <li class="has-child"><a href="#">Продукция</a></li>
+                    <li class="has-child" data-submenu-id="2">
+                        <a href="#">Применение</a>
+                    </li>
                     <li><a href="#">Сервис</a></li>
                     <li><a href="#">Аренда</a></li>
                     <li><a href="#">О компании</a></li>
@@ -25,6 +27,62 @@
         </div>
     </div>
 </header>
+<div class="submenus">
+    <!--
+    <div class="submenu" data-submenu-panel-id="2">
+        <div class="b-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#">Чистка труб и трубопроводов</a>
+                    <a href="#">Чистка  поверхностей</a>
+                    <a href="#">Чистка резервуаров и емкостей</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#">Чистка теплообменников</a>
+                    <a href="#">Удаление краски, ржавчины</a>
+                    <a href="#">Снятие покрытий</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#">Удаление грата</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div class="submenu" data-submenu-panel-id="1">
+        <div class="b-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <p><a href="#">Установки высокого давления</a></p>
+                    <ul>
+                        <li><a href="#">С электродвигателем</a></li>
+                        <li><a href="#">Дизельные</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <p><a href="#">Водоструйная техника</a></p>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <ul>
+                                <li><a href="#">Пистолеты высокого давления</a></li>
+                                <li><a href="#">Шланги высокого давления</a></li>
+                                <li><a href="#">Автоматизированное устройство очистки ОДИССЕЙ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <ul>
+                                <li><a href="#">Сопловые вставки</a></li>
+                                <li><a href="#">Роторные насадки</a></li>
+                                <li><a href="#">Устройсва вращения шлангов</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <main>
     <section class="section-lead">
         <div class="b-container">
