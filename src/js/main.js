@@ -17,7 +17,7 @@ $(function() {
             showSlideMenu();
         }
     });
-
+/*
     $('body').on('click', '[data-menu-show]', function() {
         $('[data-menu-show]').removeClass("active");
         $(this).addClass("active");
@@ -26,7 +26,7 @@ $(function() {
         $('[data-menu-panel]').removeClass("active");
         $('[data-menu-panel="'+menuId+'"]').addClass("active");
     });
-
+*/
     //плавный переход по контенту
     $('body').on('click', '[data-goto]', function(e) {
         e.preventDefault();
@@ -62,6 +62,9 @@ $(function() {
     // слайдер на главной
     initLeadSlider();
 
+    // слайдер с техникой
+    initTechnicSlider();
+
     // initXtab();
 
     /*
@@ -75,7 +78,7 @@ $(function() {
 
     toogler({
         "parent": "li",
-        "hiddenContainer": "ul",
+        "hiddenContainer": ".slide-menu__submenu",
         "link": ".slide-menu__arrow",
         "speed": 100,
     });
@@ -89,58 +92,49 @@ $(function() {
         $('html, body').animate({ scrollTop: $(selector).offset().top + hx}, 1200);
     });
 
-    $('.sticky-menu-item').on('click', function(e) {
-        e.preventDefault();
-        
-        $('.sticky-menu-item').removeClass('active');
-        $(this).addClass('active');
-        $('.sticky-menu').addClass('open');
-
-        var submenuId = $(this).attr('data-submenu');
- 
-        $('.sticky-submenu').removeClass('active');
-        setTimeout(function() {
-            $('.sticky-submenu[data-submenu="'+submenuId+'"]').addClass('active');
-        }, 500);
-
-        if ($(this).hasClass('sticky-menu-item--search')) {
-            $(this).find('input').focus();
-        }
-        
-        
-    });
-
-    $('body').on('click', function(e) {
-        if ($(e.target).parents('.sticky-menu').length == 0) {
-            closeStickyMenu();
-        }
-    });
-
-    $('.sticky-submenu-cross').on('click', function(e) {
-        e.preventDefault();
-        closeStickyMenu();
-    })
-
-    
-    $('body').on('click', '.footer-block__arrow', function(e) {
-        e.preventDefault();
-        console.log("click");
-        $(this).parents('.footer-block').toggleClass('opened');
-    });
-
-    $('[data-fancybox]').on('click', function() {
-        hideSlideMenu();
-    });
-
     new WOW().init();
 
-    $(document).scroll(function(){
-        setFixedHeader();
-    });
-});
 
-$("body").on("click", "[data-hide-menu]", function() {
-    hideSlideMenu();
+    $('.header__menu > ul > li').hover(
+        function(){
+            var elem = $(this);
+            $('body').removeClass('open-menu');
+            $('.submenu').removeClass('active');
+            $('.header__menu > ul > li').removeClass('hover');
+
+            
+            if (elem.hasClass('has-child')) {
+                $('body').addClass('open-menu');
+                elem.addClass('hover');
+
+                var submenuId = elem.attr('data-submenu-id');
+                $('[data-submenu-panel-id="'+submenuId+'"]').addClass('active');
+            }
+        }, 
+        function() {
+            //$('body').removeClass('open-menu');
+            //$('.submenu').removeClass('active');
+        }
+    );
+
+    $('.submenus').hover(
+        function() {},
+        function() {
+            $('body').removeClass('open-menu');
+            $('.submenu').removeClass('active');
+            $('.header__menu > ul > li').removeClass('hover');
+        }
+    );
+
+    showMore({
+        "parent": ".application__grid",
+        "item": '.application__item',
+        "elemShowMore": '.application__showmore a',
+        "collapseClass": "collapse",
+        "itemsShow": 2,
+        "textShowMore": "Смотреть все",
+        "textCollapse": "Свернуть",
+    });
 });
 
 var hideSlideMenu = function() {
@@ -148,30 +142,8 @@ var hideSlideMenu = function() {
 };
 
 var showSlideMenu = function() {
-    $('[data-menu-panel]').removeClass("active");
-    $('[data-menu-panel="catalog"]').addClass("active");
     $('body').addClass('show-slide-menu');
 };
-
-
-var closeStickyMenu = function() {
-    $('.sticky-submenu').removeClass('active');
-
-    setTimeout(function() {
-        $('.sticky-menu-item').removeClass('active');
-        $('.sticky-menu').removeClass('open');
-    }, 300);
-}
-
-var initMobileCategoryMenu = function() {
-    $('.mobile-category-menu-js').owlCarousel({
-        margin: 20,
-        loop: false,
-        autoWidth: true,
-        items: 3,
-        dots: false,
-    })
-}
 
 var initLeadSlider = function() {
     var selector = '.lead-slider-js';
@@ -180,8 +152,8 @@ var initLeadSlider = function() {
         loop: true,
         margin: 0,
         responsiveClass: true,
-        navContainer: '.lead-slider-nav',
-        dotsContainer: '.lead-slider-dots',
+        navContainer: '.section-lead .slider-nav',
+        dotsContainer: '.section-lead .slider-dots',
         responsive:{
             0:{
                 items: 1,
@@ -190,6 +162,76 @@ var initLeadSlider = function() {
         }
     });
 };
+
+var initTechnicSlider = function() {
+    var selector = '.technics-slider-js';
+
+    $(selector).owlCarousel({
+        loop: true,
+        margin: 0,
+        responsiveClass: true,
+        navContainer: '.technics-slider .slider-nav',
+        dotsContainer: '.technics-slider .slider-dots',
+        dotsEach: 2,
+        responsive:{
+            0: {
+                items: 1,
+                nav: true
+            },
+            1024: {
+                items: 3,
+                nav: true
+            },
+            1450: {
+                items: 4,
+                nav: true
+            }
+        }
+    });
+}
+
+var showMore = function(ops) {
+    var defaultOptions = {
+        "parent": "body",
+        "item": '.show-more-item',
+        "elemShowMore": '.services-all',
+        "collapseClass": "collapse",
+        "itemsShow": 5,
+        "textShowMore": "Все услуги",
+        "textCollapse": "Свернуть",
+    };
+
+    var options = $.extend({}, defaultOptions, ops);
+
+    var show = function() {
+        $(options.parent).removeClass(options.collapseClass);
+        $(options.item).show();
+        $(options.elemShowMore).text(options.textCollapse);
+    }
+
+    var hide = function () {
+        $(options.parent).addClass(options.collapseClass);
+        $(options.item).slice(options.itemsShow, 100).hide();
+        $(options.elemShowMore).text(options.textShowMore);
+    }
+
+    if ($(window).width() < 450) {
+        hide();
+    } else {
+        show();
+    }
+
+    $(options.elemShowMore).on('click', function(e) {
+        e.preventDefault();
+        var parent = $(options.parent);
+
+        if ($(options.parent).hasClass(options.collapseClass)) {
+            show();
+        } else {
+            hide();
+        }
+    });
+}
 
 var initXtab = function() {
     setTimeout(function() {
