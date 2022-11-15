@@ -1,14 +1,22 @@
-<include src="part/header.inc.html" title="Главная страница" class="open-menu"></include>
+<include src="part/header.inc.html" title="Главная страница" class=""></include>
 <header class="header">
     <div class="b-container">
         <div class="header__body">
-            <div class="header__burger"></div>
+            <div class="header__burger">
+                <a href="#" class="burger toggle-menu-js">
+                    <span class="burger__line-one"></span>
+                    <span class="burger__line-two"></span>
+                    <span class="burger__line-three"></span>
+                </a>
+            </div>
             <div class="header__logo">
                 <img src="/img/logo.svg" alt="" />
             </div>
             <div class="header__menu">
                 <ul>
-                    <li class="has-child"><a href="#">Продукция</a></li>
+                    <li class="has-child" data-submenu-id="1">
+                        <a href="#">Продукция</a>
+                    </li>
                     <li class="has-child" data-submenu-id="2">
                         <a href="#">Применение</a>
                     </li>
@@ -22,45 +30,53 @@
                 <a class="header-phone" href="tel:+78005552555">8 (800) 555-25-55</a>
             </div>
             <div class="header__callback">
-                <a href="#">Заказать звонок</a>
+                <a href="#feedback" data-fancybox=""><span>Заказать звонок</span></a>
             </div>
         </div>
     </div>
 </header>
 <div class="submenus">
-    <!--
     <div class="submenu" data-submenu-panel-id="2">
         <div class="b-container">
             <div class="row">
                 <div class="col-md-4">
-                    <a href="#">Чистка труб и трубопроводов</a>
-                    <a href="#">Чистка  поверхностей</a>
-                    <a href="#">Чистка резервуаров и емкостей</a>
+                    <ul>
+                        <li><a href="#">Чистка труб и трубопроводов</a></li>
+                        <li><a href="#">Чистка  поверхностей</a></li>
+                        <li><a href="#">Чистка резервуаров и емкостей</a></li>
+                    </ul>
                 </div>
                 <div class="col-md-4">
-                    <a href="#">Чистка теплообменников</a>
-                    <a href="#">Удаление краски, ржавчины</a>
-                    <a href="#">Снятие покрытий</a>
+                    <ul>
+                        <li><a href="#">Чистка теплообменников</a></li>
+                        <li><a href="#">Удаление краски, ржавчины</a></li>
+                        <li><a href="#">Снятие покрытий</a></li>
+                    </ul>
                 </div>
                 <div class="col-md-4">
-                    <a href="#">Удаление грата</a>
+                    <ul>
+                        <li><a href="#">Удаление грата</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    -->
 
-    <div class="submenu" data-submenu-panel-id="1">
+    <div class="submenu submenu__products" data-submenu-panel-id="1" class="active">
         <div class="b-container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-5">
                     <p><a href="#">Установки высокого давления</a></p>
-                    <ul>
-                        <li><a href="#">С электродвигателем</a></li>
-                        <li><a href="#">Дизельные</a></li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                <li class="active"><a href="#">С электродвигателем</a></li>
+                                <li><a href="#">Дизельные</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-7">
                     <p><a href="#">Водоструйная техника</a></p>
                     <div class="row">
                         <div class="col-md-7">
@@ -83,6 +99,56 @@
         </div>
     </div>
 </div>
+<div class="slide-menu">
+    <span class="slide-menu__close toggle-menu-js">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.41425 7.00025L13.7072 1.70725C14.0982 1.31625 14.0982 0.68425 13.7072 0.29325C13.3162 -0.09775 12.6842 -0.09775 12.2933 0.29325L7.00025 5.58625L1.70725 0.29325C1.31625 -0.09775 0.68425 -0.09775 0.29325 0.29325C-0.09775 0.68425 -0.09775 1.31625 0.29325 1.70725L5.58625 7.00025L0.29325 12.2933C-0.09775 12.6842 -0.09775 13.3162 0.29325 13.7072C0.48825 13.9022 0.74425 14.0002 1.00025 14.0002C1.25625 14.0002 1.51225 13.9022 1.70725 13.7072L7.00025 8.41425L12.2933 13.7072C12.4882 13.9022 12.7443 14.0002 13.0002 14.0002C13.2562 14.0002 13.5122 13.9022 13.7072 13.7072C14.0982 13.3162 14.0982 12.6842 13.7072 12.2933L8.41425 7.00025Z" fill="#202020"/>
+        </svg>
+    </span>
+    <div class="slide-menu__caption">Меню</div>
+    <div class="slide-menu__body">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li>
+                <a href="#">Продукция</a>
+                <span class="slide-menu__arrow"></span>
+                <div class="slide-menu__submenu">
+                    <p><a href="#">Установки высокого давления</a></p>
+                    <ul>    
+                        <li class="active"><a href="#">С электродвигателем</a></li>
+                        <li><a href="#">Дизельные</a></li>
+                    </ul>
+                    <p><a href="#">Водоструйная техника</a></p>
+                    <ul>
+                        <li><a href="#">Сопловые вставки</a></li>
+                        <li><a href="#">Роторные насадки</a></li>
+                        <li><a href="#">Устройсва вращения шлангов</a></li>
+                    </ul>
+                </div>
+                
+            </li>
+            <li>
+                <a href="#">Применение</a>
+                <span class="slide-menu__arrow"></span>
+                <div class="slide-menu__submenu">
+                    <ul>
+                        <li><a href="#">Чистка труб и трубопроводов</a></li>
+                        <li><a href="#">Чистка  поверхностей</a></li>
+                        <li><a href="#">Чистка резервуаров и емкостей</a></li>
+                        <li><a href="#">Чистка теплообменников</a></li>
+                        <li><a href="#">Удаление краски, ржавчины</a></li>
+                        <li><a href="#">Снятие покрытий</a></li>
+                        <li><a href="#">Удаление грата</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Сервис</a></li>
+            <li><a href="#">Аренда</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
+</div>
 <main>
     <section class="section-lead">
         <div class="b-container">
@@ -97,7 +163,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         </div>
                         <div class="lead-slider__button">
-                            <a href="#" class="btn">Заказать</a>
+                            <a href="#feedback" data-fancybox="" class="btn">Заказать</a>
                         </div>
                     </div>
                     <div class="lead-slider__image">
@@ -115,7 +181,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         </div>
                         <div class="lead-slider__button">
-                            <a href="#" class="btn">Заказать</a>
+                            <a href="#feedback" data-fancybox="" class="btn">Заказать</a>
                         </div>
                     </div>
                     <div class="lead-slider__image">
@@ -123,10 +189,10 @@
                     </div>
                 </div>     
             </div>
-            <div class="lead-slider-controls">
-                <div class="lead-slider-controls__box">
-                    <div class="lead-slider-dots"></div>
-                    <div class="lead-slider-nav"></div>
+            <div class="slider-controls">
+                <div class="slider-controls__box">
+                    <div class="slider-dots"></div>
+                    <div class="slider-nav"></div>
                 </div>
             </div>
         </div>
@@ -194,15 +260,16 @@
             <div class="section-header">
                 Водоструйная техника
             </div>
-            <div class="technics__list">
-                <div class="technics__grid">
+            <div class="technics__list technics-slider">
+                <div class="technics__grid technics-slider-js owl-carousel">
+
                     <div class="technics__item">
                         <div class="technics__card">
                             <div class="technics__image">
                                 <img src="img/tech-1.jpg">
                             </div>
                             <div class="technics__caption">
-                                Пистолеты высокого <br/ >
+                                Пистолеты высокого <br />
                                 давления
                             </div>
                             <div class="technics__text">
@@ -243,7 +310,7 @@
                                 <img src="img/tech-3.jpg">
                             </div>
                             <div class="technics__caption">
-                                Шланги высокого <br/ > давления
+                                Шланги высокого <br /> давления
                             </div>
                             <div class="technics__text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -263,7 +330,7 @@
                                 <img src="img/tech-2.jpg">
                             </div>
                             <div class="technics__caption">
-                                Роторные <br/ > насадки
+                                Роторные <br /> насадки
                             </div>
                             <div class="technics__text">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
@@ -276,6 +343,95 @@
                                 </a>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="technics__item">
+                        <div class="technics__card">
+                            <div class="technics__image">
+                                <img src="img/tech-1.jpg">
+                            </div>
+                            <div class="technics__caption">
+                                Автоматизированное устройство очистки
+                            </div>
+                            <div class="technics__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                quis nostrud exercitation ullamco
+                            </div>
+                            <div class="technics__btn">
+                                <a href="#" class="btn">
+                                    В каталог
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="technics__item">
+                        <div class="technics__card">
+                            <div class="technics__image">
+                                <img src="img/tech-3.jpg">
+                            </div>
+                            <div class="technics__caption">
+                                Шланги высокого <br /> давления
+                            </div>
+                            <div class="technics__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                quis nostrud exercitation ullamco
+                            </div>
+                            <div class="technics__btn">
+                                <a href="#" class="btn">
+                                    В каталог
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="technics__item">
+                        <div class="technics__card">
+                            <div class="technics__image">
+                                <img src="img/tech-1.jpg">
+                            </div>
+                            <div class="technics__caption">
+                                Автоматизированное устройство очистки
+                            </div>
+                            <div class="technics__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                quis nostrud exercitation ullamco
+                            </div>
+                            <div class="technics__btn">
+                                <a href="#" class="btn">
+                                    В каталог
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="technics__item">
+                        <div class="technics__card">
+                            <div class="technics__image">
+                                <img src="img/tech-3.jpg">
+                            </div>
+                            <div class="technics__caption">
+                                Шланги высокого <br /> давления
+                            </div>
+                            <div class="technics__text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                                quis nostrud exercitation ullamco
+                            </div>
+                            <div class="technics__btn">
+                                <a href="#" class="btn">
+                                    В каталог
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slider-controls">
+                    <div class="slider-controls__box">
+                        <div class="slider-dots"></div>
+                        <div class="slider-nav"></div>
                     </div>
                 </div>
             </div>
@@ -402,6 +558,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="application__showmore">
+                        <a href="#">Смотреть все</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -410,7 +569,7 @@
     <section class="service">
         <div class="b-container">
             <div class="section-header">
-                Сервисно обслуживание
+                Сервисное обслуживание
             </div>
             <div class="service__text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
@@ -419,33 +578,39 @@
             </div>
             <div class="service__list">
                 <div class="service__item">
-                    <div class="service__card service__card--1">
-                        <div class="service__caption">
-                            Техническое 
-                            обучение
-                        </div>
-                        <div class="service__btn">
-                            <a href="#" class="btn">Подробнее</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="service__item">
-                    <div class="service__card service__card--2">
-                        <div class="service__caption">
-                            Гарантийное и постгарантийное бслуживание
-                        </div>
-                        <div class="service__btn">
-                            <a href="#" class="btn">Подробнее</a>
+                    <div class="service__card" style="background-image: url('/img/service-1.jpg')">
+                        <div class="service__panel">
+                            <div class="service__caption">
+                                Техническое<br /> 
+                                обучение
+                            </div>
+                            <div class="service__btn">
+                                <a href="#" class="btn">Подробнее</a>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="service__item">
-                    <div class="service__card service__card--3">
-                        <div class="service__caption">
-                            Материально-техническое обеспечение
+                    <div class="service__card" style="background-image: url('/img/service-2.jpg')">
+                        <div class="service__panel">
+                            <div class="service__caption">
+                                Гарантийное и постгарантийное бслуживание
+                            </div>
+                            <div class="service__btn">
+                                <a href="#" class="btn">Подробнее</a>
+                            </div>
                         </div>
-                        <div class="service__btn">
-                            <a href="#" class="btn">Подробнее</a>
+                    </div>
+                </div>
+                <div class="service__item">
+                    <div class="service__card" style="background-image: url('/img/service-3.jpg')">
+                        <div class="service__panel">
+                            <div class="service__caption">
+                                Материально-техническое обеспечение
+                            </div>
+                            <div class="service__btn">
+                                <a href="#" class="btn">Подробнее</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -456,42 +621,40 @@
     <section class="about">
         <div class="b-container">
             <div class="about__list">
-                <div class="about__item">
+                <div class="about__image-box">
                     <div class="about__image">
                         <img src="img/about.jpg">
                     </div>
                 </div>
-                <div class="about__item">
-                    <div class="about__info">
-                        <div class="about__caption">
-                            О компании
-                        </div>
-                        <div class="about__text">
-                            <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
-                                do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                                minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                                ullamcoLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                                ut labore</p>
+                <div class="about__info">
+                    <div class="about__caption">
+                        О компании
+                    </div>
+                    <div class="about__text">
+                        <p class="bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed 
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+                            minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                            ullamcoLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                            ut labore</p>
 
-                            <p>et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamcoLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-                                veniam, quis nostrud </p>
-                                
-                            <p>exercitation ullamcoLorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                                minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor sit amet, 
-                                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                                ullamco</p>
-                        </div>
-                        <div class="about__btn">
-                            <a href="#" class="btn">
-                                Отправить запрос
-                            </a>
-                        </div>
+                        <p>et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamcoLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+                            veniam, quis nostrud </p>
+                            
+                        <p>exercitation ullamcoLorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
+                            minim veniam, quis nostrud exercitation ullamcoLorem ipsum dolor sit amet, 
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                            ullamco</p>
+                    </div>
+                    <div class="about__btn">
+                        <a href="#feedback" data-fancybox="" class="btn">
+                            Отправить запрос
+                        </a>
                     </div>
                 </div>
             </div>

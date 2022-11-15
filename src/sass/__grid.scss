@@ -52,7 +52,7 @@ $container-width-larger-than-1400: 100% !default;
 @media (#{$bp-larger-than-desktop}) {
   .b-container {
     width: $container-width-larger-than-desktop;
-    max-width: 1024px;
+    max-width: 1100px;
   }
 }
 
