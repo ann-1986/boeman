@@ -11,3 +11,153 @@
     <link rel="stylesheet" href="css/app.css" />
 </head>
 <body class="@@class">
+<header class="header">
+    <div class="b-container">
+        <div class="header__body">
+            <div class="header__burger">
+                <a href="#" class="burger toggle-menu-js">
+                    <span class="burger__line-one"></span>
+                    <span class="burger__line-two"></span>
+                    <span class="burger__line-three"></span>
+                </a>
+            </div>
+            <div class="header__logo">
+                <img src="/img/logo.svg" alt="" />
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li class="has-child" data-submenu-id="1">
+                        <a href="#">Продукция</a>
+                    </li>
+                    <li class="has-child" data-submenu-id="2">
+                        <a href="#">Применение</a>
+                    </li>
+                    <li><a href="#">Сервис</a></li>
+                    <li><a href="#">Аренда</a></li>
+                    <li><a href="#">О компании</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="header__phone">
+                <a class="header-phone" href="tel:+78005552555">8 (800) 555-25-55</a>
+            </div>
+            <div class="header__callback">
+                <a href="#feedback" data-fancybox=""><span>Заказать звонок</span></a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="submenus">
+    <div class="submenu" data-submenu-panel-id="2">
+        <div class="b-container">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="#">Чистка труб и трубопроводов</a></li>
+                        <li><a href="#">Чистка  поверхностей</a></li>
+                        <li><a href="#">Чистка резервуаров и емкостей</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="#">Чистка теплообменников</a></li>
+                        <li><a href="#">Удаление краски, ржавчины</a></li>
+                        <li><a href="#">Снятие покрытий</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="#">Удаление грата</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="submenu submenu__products" data-submenu-panel-id="1" class="active">
+        <div class="b-container">
+            <div class="row">
+                <div class="col-md-5">
+                    <p><a href="#">Установки высокого давления</a></p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                <li class="active"><a href="#">С электродвигателем</a></li>
+                                <li><a href="#">Дизельные</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <p><a href="#">Водоструйная техника</a></p>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <ul>
+                                <li><a href="#">Пистолеты высокого давления</a></li>
+                                <li><a href="#">Шланги высокого давления</a></li>
+                                <li><a href="#">Автоматизированное устройство очистки ОДИССЕЙ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-5">
+                            <ul>
+                                <li><a href="#">Сопловые вставки</a></li>
+                                <li><a href="#">Роторные насадки</a></li>
+                                <li><a href="#">Устройсва вращения шлангов</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="slide-menu">
+    <span class="slide-menu__close toggle-menu-js">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.41425 7.00025L13.7072 1.70725C14.0982 1.31625 14.0982 0.68425 13.7072 0.29325C13.3162 -0.09775 12.6842 -0.09775 12.2933 0.29325L7.00025 5.58625L1.70725 0.29325C1.31625 -0.09775 0.68425 -0.09775 0.29325 0.29325C-0.09775 0.68425 -0.09775 1.31625 0.29325 1.70725L5.58625 7.00025L0.29325 12.2933C-0.09775 12.6842 -0.09775 13.3162 0.29325 13.7072C0.48825 13.9022 0.74425 14.0002 1.00025 14.0002C1.25625 14.0002 1.51225 13.9022 1.70725 13.7072L7.00025 8.41425L12.2933 13.7072C12.4882 13.9022 12.7443 14.0002 13.0002 14.0002C13.2562 14.0002 13.5122 13.9022 13.7072 13.7072C14.0982 13.3162 14.0982 12.6842 13.7072 12.2933L8.41425 7.00025Z" fill="#202020"/>
+        </svg>
+    </span>
+    <div class="slide-menu__caption">Меню</div>
+    <div class="slide-menu__body">
+        <ul>
+            <li><a href="/">Главная</a></li>
+            <li>
+                <a href="#">Продукция</a>
+                <span class="slide-menu__arrow"></span>
+                <div class="slide-menu__submenu">
+                    <p><a href="#">Установки высокого давления</a></p>
+                    <ul>    
+                        <li class="active"><a href="#">С электродвигателем</a></li>
+                        <li><a href="#">Дизельные</a></li>
+                    </ul>
+                    <p><a href="#">Водоструйная техника</a></p>
+                    <ul>
+                        <li><a href="#">Сопловые вставки</a></li>
+                        <li><a href="#">Роторные насадки</a></li>
+                        <li><a href="#">Устройсва вращения шлангов</a></li>
+                    </ul>
+                </div>
+                
+            </li>
+            <li>
+                <a href="#">Применение</a>
+                <span class="slide-menu__arrow"></span>
+                <div class="slide-menu__submenu">
+                    <ul>
+                        <li><a href="#">Чистка труб и трубопроводов</a></li>
+                        <li><a href="#">Чистка  поверхностей</a></li>
+                        <li><a href="#">Чистка резервуаров и емкостей</a></li>
+                        <li><a href="#">Чистка теплообменников</a></li>
+                        <li><a href="#">Удаление краски, ржавчины</a></li>
+                        <li><a href="#">Снятие покрытий</a></li>
+                        <li><a href="#">Удаление грата</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Сервис</a></li>
+            <li><a href="#">Аренда</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </div>
+</div>

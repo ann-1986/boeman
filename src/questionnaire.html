@@ -1,0 +1,214 @@
+<include src="part/header.inc.html" title="Опросный лист" class=""></include>
+<main>
+    <include src="part/breadcrumbs.inc.html" title="Опросный лист"></include>
+    <section class="section-page">
+      <div class="b-container">
+        <h1>Опросный лист</h1>
+
+        <form>
+          <div class="question-form__items">
+            <div class="question-form__item">
+              <div class="question-form__label">Компания</div>
+              <div class="question-form__control">
+                <input type="text" name="company">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Отдел</div>
+              <div class="question-form__control">
+                <input type="text" name="department">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Город</div>
+              <div class="question-form__control">
+                <input type="text" name="city">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Телефон</div>
+              <div class="question-form__control">
+                <input type="text" name="phone">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Имя</div>
+              <div class="question-form__control">
+                <input type="text" name="name">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Эл. почта</div>
+              <div class="question-form__control">
+                <input type="text" name="email">
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__block">
+            <div class="question-form__list">
+              <div class="question-form__detail">
+                <div class="question-form__label">Расход воды: л/мин</div>
+                <div class="question-form__control">
+                  <input type="text" name="consumption">
+                </div>
+              </div>
+              <div class="question-form__detail">
+                <div class="question-form__label">Приводная мощность: кВт</div>
+                <div class="question-form__control">
+                  <input type="text" name="power">
+                </div>
+              </div>
+              <div class="question-form__detail">
+                <div class="question-form__label">Рабочее давление</div>
+                <div class="question-form__control">
+                  <input type="text" name="pressure">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__block">
+            <div class="question-form__header">
+              Вид двигателя
+            </div>
+            <div class="question-form__radio">
+              <div class="question-form__point">
+                <input type="radio" name="engine">Электро
+              </div>
+              <div class="question-form__point">
+                <input type="radio" name="engine">Дизель
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__block">
+            <div class="question-form__list">
+              <div class="question-form__detail">
+                <div class="question-form__label">Рабочее напряжение</div>
+                <div class="question-form__control">
+                  <input type="text" name="voltage">
+                </div>
+              </div>
+              <div class="question-form__detail">
+                <div class="question-form__label">Число оборотов двигателя</div>
+                <div class="question-form__control">
+                  <input type="text" name="turnovers">
+                </div>
+              </div>
+              <div class="question-form__detail">
+                <div class="question-form__label">Тип защиты двигателя</div>
+                <div class="question-form__control">
+                  <input type="text" name="protection">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__block">
+            <div class="question-form__header">
+              Клапан регулирования давления
+            </div>
+            <div class="question-form__radio">
+              <div class="question-form__point">
+                <input type="radio" name="valve">Ручной (макс. 1000 бар)
+              </div>
+              <div class="question-form__point">
+                <input type="radio" name="valve">Пневматический  (макс. 1800 бар)
+              </div>
+              <div class="question-form__point">
+                <input type="radio" name="valve">Байпасный клапан (макс. 1000 бар)
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__items">
+            <div class="question-form__item">
+              <div class="question-form__label">Арматура с напорной стороны (резьба)</div>
+              <div class="question-form__control">
+                <input type="text" name="fitting">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Насос подпора (мин. 3 бар)</div>
+              <div class="question-form__control">
+                <input type="text" name="pump">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Компресор (мин. 6 бар)</div>
+              <div class="question-form__control">
+                <input type="text" name="compressor">
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Перепускная линия для отвода байпасной воды</div>
+              <div class="question-form__control">
+                <input type="text" name="tap-line">
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__block">
+            <div class="question-form__header">
+              Тип установки
+            </div>
+            <div class="question-form__radio">
+              <div class="question-form__point">
+                <input type="radio" name="type-installation">Передвижная
+              </div>
+              <div class="question-form__point">
+                <input type="radio" name="type-installation">Стационарная
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__block">
+            <div class="question-form__header">
+              Дополнительные опции
+            </div>
+            
+          </div>
+
+          <div class="question-form__items">
+            <div class="question-form__item">
+              <div class="question-form__label">Для каких целей предназначается оборудование?</div>
+              <div class="question-form__control">
+                <textarea name="purpose"></textarea>
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Если для очистки, что конкретно и до какой степени планируется очищать? Указать ориентировачные 
+                размеры предполагаемого к очистки оборудования.</div>
+              <div class="question-form__control">
+                <textarea name="clearning"></textarea>
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Если планируется ручная очистка, на сколько рабочих мест - одно или два?</div>
+              <div class="question-form__control">
+                <textarea name="quantity"></textarea>
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Какой ориентировочный режим работы установки планируется?</div>
+              <div class="question-form__control">
+                <textarea name="mode"></textarea>
+              </div>
+            </div>
+            <div class="question-form__item">
+              <div class="question-form__label">Текущее оборудование и примечания:</div>
+              <div class="question-form__control">
+                <textarea name="notes"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-form__button">
+            <button class="btn">Отправить</button>
+        </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <include src="part/footer.inc.html"></include>
