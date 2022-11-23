@@ -1,0 +1,130 @@
+$radioBackgroundColor: #12A3F8;
+$radioBorderColor: #CACDD2;
+
+/*
+<label class="custom-radio">
+    <input type="radio" name="payment" value="Подпись" />
+    <div class="custom-radio__label">
+        Подпись
+    </div>
+</label>
+ */
+
+.custom-radio {
+  &__label {
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $radioBorderColor;
+      border-radius: 50%;
+      position: absolute;
+      left: 2px;
+      top: 0px;
+    }
+
+    &:after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      border-radius: 50%;
+      display: none;
+      background-color: $radioBackgroundColor;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked {
+      + .custom-radio__label {
+        &:before {
+
+        }
+        &:after {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+/*
+<label for="checkboxid" class="custom-checkbox">
+  <input type="checkbox" name="checkboxname[]" id="checkboxid" value="Подпись">
+  <span class="custom-checkbox__icon"></span>
+  <span class="custom-checkbox__label">Подпись</span>
+</label>
+ */
+
+$checkboxPrimaryColor: #fff;
+$checkboxSecondaryColor: #CACDD2;
+$checkboxActiveColor: #12A3F8;
+
+.custom-checkbox {
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: $checkboxPrimaryColor;
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      background: $checkboxSecondaryColor;
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 20px;
+      height: 20px;
+      background: transparent url('/img/checkbox-icon.svg') center center no-repeat;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked {
+      + .custom-checkbox__icon {
+        border-color: $checkboxPrimaryColor;
+
+        &:before {
+          background: $checkboxActiveColor;
+        }
+      }
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    padding-left: 32px;
+    font-size: 14px;
+  }
+}

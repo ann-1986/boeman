@@ -56,12 +56,20 @@ $container-width-larger-than-1400: 100% !default;
   }
 }
 
+@media (#{$bp-larger-than-1400}) {
+  .b-container {
+    width: $container-width-larger-than-1400;
+    max-width: 1380px;
+  }
+}
+
 @media (#{$bp-larger-than-desktopfullhd}) {
   .b-container {
     width: $container-width-larger-than-desktop;
     max-width: $container-width;
   }
 }
+
 /*
 @media (#{$bp-larger-than-1400}) {
   .b-container {

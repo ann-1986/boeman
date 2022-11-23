@@ -5,7 +5,7 @@
       <div class="b-container">
         <h1>Опросный лист</h1>
 
-        <form>
+        <form class="question-form">
           <div class="question-form__items">
             <div class="question-form__item">
               <div class="question-form__label">Компания</div>
@@ -28,7 +28,7 @@
             <div class="question-form__item">
               <div class="question-form__label">Телефон</div>
               <div class="question-form__control">
-                <input type="text" name="phone">
+                <input type="text" name="phone" data-mask="+7(999)999-99-99">
               </div>
             </div>
             <div class="question-form__item">
@@ -74,10 +74,20 @@
             </div>
             <div class="question-form__radio">
               <div class="question-form__point">
-                <input type="radio" name="engine">Электро
+                <label class="custom-radio">
+                  <input type="radio" name="engine" value="Электро" />
+                  <div class="custom-radio__label">
+                    Электро
+                  </div>
+                </label>
               </div>
               <div class="question-form__point">
-                <input type="radio" name="engine">Дизель
+                <label class="custom-radio">
+                  <input type="radio" name="engine" value="Дизель" />
+                  <div class="custom-radio__label">
+                    Дизель
+                  </div>
+                </label>
               </div>
             </div>
           </div>
@@ -111,13 +121,28 @@
             </div>
             <div class="question-form__radio">
               <div class="question-form__point">
-                <input type="radio" name="valve">Ручной (макс. 1000 бар)
+                <label class="custom-radio">
+                  <input type="radio" name="klapan" value="Ручной (макс. 1000 бар)" />
+                  <div class="custom-radio__label">
+                    Ручной (макс. 1000 бар)
+                  </div>
+                </label>
               </div>
               <div class="question-form__point">
-                <input type="radio" name="valve">Пневматический  (макс. 1800 бар)
+                <label class="custom-radio">
+                  <input type="radio" name="klapan" value="Пневматический  (макс. 1800 бар)" />
+                  <div class="custom-radio__label">
+                    Пневматический  (макс. 1800 бар)
+                  </div>
+                </label>
               </div>
               <div class="question-form__point">
-                <input type="radio" name="valve">Байпасный клапан (макс. 1000 бар)
+                <label class="custom-radio">
+                  <input type="radio" name="klapan" value="Байпасный клапан (макс. 1000 бар)" />
+                  <div class="custom-radio__label">
+                    Байпасный клапан (макс. 1000 бар)
+                  </div>
+                </label>
               </div>
             </div>
           </div>
@@ -155,10 +180,20 @@
             </div>
             <div class="question-form__radio">
               <div class="question-form__point">
-                <input type="radio" name="type-installation">Передвижная
+                <label class="custom-radio">
+                  <input type="radio" name="type-installation" value="Передвижная" />
+                  <div class="custom-radio__label">
+                    Передвижная
+                  </div>
+                </label>
               </div>
               <div class="question-form__point">
-                <input type="radio" name="type-installation">Стационарная
+                <label class="custom-radio">
+                  <input type="radio" name="type-installation" value="Стационарная" />
+                  <div class="custom-radio__label">
+                    Стационарная
+                  </div>
+                </label>
               </div>
             </div>
           </div>
@@ -167,7 +202,24 @@
             <div class="question-form__header">
               Дополнительные опции
             </div>
-            
+            <div class="checkbox__list">
+              <div class="checkbox__item">
+                <label for="checkbox-1" class="custom-checkbox">
+                  <input type="checkbox" name="extra[]"
+                         id="checkbox-1" value="Передвижная">
+                  <span class="custom-checkbox__icon"></span>
+                  <span class="custom-checkbox__label">Передвижная</span>
+                </label>
+              </div>
+              <div class="checkbox__item">
+                <label for="checkbox-2" class="custom-checkbox">
+                  <input type="checkbox" name="extra[]"
+                         id="checkbox-2" value="Стационарная">
+                  <span class="custom-checkbox__icon"></span>
+                  <span class="custom-checkbox__label">Стационарная</span>
+                </label>
+              </div>
+            </div>
           </div>
 
           <div class="question-form__items">

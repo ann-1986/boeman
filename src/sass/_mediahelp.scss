@@ -1,5 +1,5 @@
 .bp-larger-than{
-    //display: none;
+    // display: none;
 
     position: fixed;
     bottom: 0;
@@ -56,6 +56,12 @@
     &-note{
       opacity: 0.5;
       @media($bp-larger-than-note){
+        opacity: 1;
+      }
+    }
+    &-1400{
+      opacity: 0.5;
+      @media($bp-larger-than-1400){
         opacity: 1;
       }
     }

@@ -4,7 +4,7 @@
     <section class="section-page">
       <div class="b-container">
           <div class="contact-page">
-            <div class="contact-page__description">
+            <div class="contact-page__content">
               <h1>Контакты</h1>
               <div class="contact-page__item">
                 <div class="contact-page__caption">Номера телефонов:</div>
@@ -28,10 +28,62 @@
               <span class="contact-page__name">ООО «ПРОФОБОРУДОВАНИЕ НЕВА»</span> 
             </div>
             <div class="contact-page__map">
-
+              <div class="map-box">
+                <div id="map"></div>
+                <div id="map-form" class="map-form">
+                  <form>
+                    <div class="map-form__header">
+                      Есть вопросы ?
+                    </div>
+                    <div class="map-form__lead">
+                      Оставьте свои контакты, и мы обязательно с Вами свяжемся!
+                    </div>
+                    <div class="map-form__items">
+                      <div class="map-form__item">
+                        <input type="text" name="name" placeholder="Полное имя*" />
+                      </div>
+                      <div class="map-form__item">
+                        <input type="text" name="phone" placeholder="Телефон*" data-mask="+7(999)999-99-99" />
+                      </div>
+                      <div class="map-form__item">
+                        <input type="text" name="email" placeholder="Почта" />
+                      </div>
+                      <div class="map-form__item">
+                        <input type="text" name="message" placeholder="Сообщение" />
+                      </div>
+                    </div>
+                    <div class="map-form__button">
+                      <button class="btn">Отправить заявку</button>
+                    </div>
+                    <div class="map-form__privacy">
+                      Отправляя заявку, вы принимаете условия <a href="#">обработки персональных данных</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
       </div>
     </section>
   </main>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+  var mapData = [{
+    id: "map",
+    center: [59.942480, 30.257352],
+    /*
+    placemarks: [
+      {
+        header: 'Boman',
+        coords: [59.942480, 30.232352],
+        opened: false,
+        iconImageHref: 'img/map-marker.svg',
+        iconImageSize: [24, 32],
+        iconImageOffset: [-21, -45],
+      }
+    ],
+     */
+    zoom: 14,
+  }];
+</script>
   <include src="part/footer.inc.html"></include>
