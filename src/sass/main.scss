@@ -1,5 +1,7 @@
 @import 'bootstrap/css/bootstrap.min';
 @import '_grid';
+@import 'map';
+@import 'custom-inputs';
 @import 'mediahelp';
 @import 'sprite';
 @import '../vendor/owlcarousel/owl.carousel.scss';
@@ -1322,7 +1324,7 @@ h3 {
 
         @media ($bp-larger-than-tablet) {
             width: 50%;
-        } 
+        }
 
         @media ($bp-larger-than-desktop) {
             width: 33.33%;
@@ -1361,7 +1363,7 @@ h3 {
         @media ($bp-larger-than-desktop) {
             height: 250px;
             margin-bottom: 0;
-        } 
+        }
 
         img {
             //max-height: 300px;
@@ -1772,8 +1774,13 @@ h3 {
 
 .contact-page {
     display: flex;
+    // flex-wrap: wrap;
+    // align-items: center;
     flex-wrap: wrap;
-    align-items: center;
+
+    @media ($bp-larger-than-1400) {
+        flex-wrap: nowrap;
+    }
 
     &__item {
         margin-bottom: 32px;
@@ -1806,19 +1813,70 @@ h3 {
         color: #414141;
     }
 
+    &__content {
+        flex-shrink: 0;
+        padding-top: 50px;
+        padding-right: 30px;
+        width: 456px;
+        margin-bottom: 40px;
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__map {
+        width: 100%;
+    }
+}
+
+.map-box {
+    // padding: 50px 0 74px;
+    width: 100%;
+    position: relative;
+
+    @media ($bp-larger-than-desktop) {
+        display: flex;
+        justify-content: center;
+        justify-content: flex-end;
+    }
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 40px;
+    //display: none;
+
+    @media ($bp-larger-than-desktop) {
+        margin-bottom: 0;
+        height: auto;
+        width: auto;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 74px;
+
+        display: block;
+    }
 }
 
 .question-form {
+    max-width: 715px;
+
     &__items {
-        padding: 57px 0;
+        margin-bottom: 57px;
     }
 
     &__list {
-        display: flex;
-        justify-content: space-between;
-        margin-left: -12px;
-        margin-right: -12px;
-        flex-wrap: wrap;
+        @media ($bp-larger-than-desktop) {
+            display: flex;
+            margin-left: -12px;
+            margin-right: -12px;
+            justify-content: space-between;
+        }
     }
 
     &__item {
@@ -1826,8 +1884,18 @@ h3 {
     }
 
     &__detail {
-        width: 33.33%;
-        padding: 0 12px;
+        @media ($bp-larger-than-desktop) {
+            width: 33.33%;
+            padding: 0 12px;
+        }
+
+        & + .question-form__detail {
+            margin-top: 20px;
+
+            @media ($bp-larger-than-desktop) {
+                margin-top: 0;
+            }
+        }
     }
 
     &__label {
@@ -1847,6 +1915,8 @@ h3 {
             height: 40px;
             border: 1px solid #DDDDDD;
             border-radius: 8px;
+            font-size: 16px;
+            padding: 0 15px;
         }
 
         textarea {
@@ -1880,6 +1950,96 @@ h3 {
             margin-right: 16px;
         }
     }
+
+    .checkbox {
+        &__item {
+            + .checkbox__item {
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+.map-form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 450px;
+    background-color: #F9F9F9;
+    border-radius: 8px;
+    padding: 30px 30px 20px;
+    z-index: 2;
+    box-shadow: 0 15px 25px rgba(123,121,121,.25);
+
+    @media ($bp-larger-than-phablet) {
+        padding: 32px 68px 20px;
+    }
+
+    @media ($bp-larger-than-tablet) {
+        width: 450px;
+    }
+
+    @media ($bp-larger-than-desktop) {
+        margin-left: 0;
+        margin-right: 50px;
+        box-shadow: 30px 20px 100px rgba(123, 121, 121, 0.15);
+    }
+
+    &__header {
+        text-align: center;
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    &__lead {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 25px;
+        line-height: 1.2;
+    }
+
+    &__item {
+        margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+        border: 0 none;
+        border-bottom: 1px solid #d0d0d0;
+        font-size: 16px;
+        font-weight: 400;
+        width: 100%;
+        height: 50px;
+        outline: none;
+        background-color: #F9F9F9;
+
+        &.error {
+            border-color: #ff0000;
+        }
+    }
+
+    &__button {
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        .btn {
+            margin-left: auto;
+            margin-right: auto;
+            width: 250px;
+        }
+    }
+
+    &__privacy {
+        text-align: center;
+        font-size: 12px;
+        color: #c4c4c4;
+        padding: 0 20px;
+        line-height: 1.2;
+
+        a {
+            color: #c4c4c4;
+        }
+    }
 }
 
 .page-header {
@@ -1892,13 +2052,13 @@ h3 {
 .product-detail-page {
     .page-header {
         margin-bottom: 8px;
-    }  
+    }
 }
 
 .category-page {
     .page-header {
         margin-bottom: 56px;
-    } 
+    }
 }
 
 .seo-text {

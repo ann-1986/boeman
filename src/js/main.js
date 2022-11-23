@@ -1,5 +1,6 @@
 
 $(function() {
+    console.log('inside jquery function');
     //маска телефонов
     $('[data-mask]').each(function() {
         input = $(this);
