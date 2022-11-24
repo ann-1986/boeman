@@ -1020,6 +1020,8 @@ h3 {
         }
     }
 
+
+
     &__menu {
         width: 100%;
         display: flex;
@@ -1275,7 +1277,8 @@ h3 {
 
 
 .breadcrumbs {
-    padding: 23px 0 7px;
+    margin-top: 36px;
+    margin-bottom: 60px;
 
     ul {
         li {
@@ -2176,12 +2179,13 @@ h3 {
     padding: 30px 30px 20px;
     z-index: 2;
     position: relative;
+    box-shadow: 30px 20px 100px rgba(123, 121, 121, 0.15);
 
     &__box {
         position: relative;
 
         &:before {
-            display: block;
+            display: none;
             position: absolute;
             content: "";
             width: 273px;
