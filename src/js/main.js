@@ -8,6 +8,11 @@ $(function() {
         input.inputmask({"mask": mask});
     });
 
+    $('table.styled').each(function() {
+       var table = $(this);
+       table.wrap('<div class="table-scrolled" />');
+    });
+
     //сворачивание мобильного меню
     $('.toggle-menu-js').on('click', function (e) {
         e.preventDefault();
